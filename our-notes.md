@@ -5,7 +5,7 @@
 2. create method on the linked list class to reverse the order of the pointers.
 
 ```javascript
-//3.
+//3. (psuedo code)
 make a class Node {
   constructor() {
     this.value;
@@ -57,17 +57,38 @@ this.tail = get(0)
 }
 
   }
-}
 
 ```
-
-
-
-
+4. Coded in code.js
+5. Walked through
+6. Time complexity 0(n^2) space is 0(1)
 
 
 # The missing value
 
+Amazon and Microsoft ask you to derive an algorithm that will inspect an array of of numbers that contains the values between 0 and the length of the list, inclusive, and find the missing value. For example, you may be given an array that of length 6 that contains
+
+[0, 2, 3, 4, 5, 6]
+
+It is your job to determine that the missing value from the array is 1.
+
+1. place missing integer in array i/o both arrays(same array not specified)
+2. loop to iterate, finding if !(i + 1 === num + 1) then splice at i then insert, num + 1
+```javascript
+//3.
+function missInt(array) 
+classic for loop {
+  make ele at index
+  if (i + 1 !== ele + 1) {
+    the array.splice(i,0,ele + 1)
+  }
+}
+return array outside loop
+
+```
+4.
+5. 
+6.
 
 
 
