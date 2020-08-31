@@ -13,6 +13,7 @@ class LinkedList {
 
   }
 
+
   addToTail(val) {
     let newNode = new Node(val);
     if (this.length === 0) {
@@ -166,8 +167,43 @@ class LinkedList {
   size() {
     return this.length;
   }
+
+  reverse() {
+      let originalHead = this.head;
+      let originalTail = this.tail;
+      let node1;
+      let node2;
+      for (let i = 0; i < Math.ceil(this.length / 2); i++) {
+        node1 = this.get(i);
+        node2 = this.get((this.length - 1) - i);
+        node1.value = node2.value;
+      }
+      this.tail = originalHead;
+      this.head = originalTail;
+      return this;
+  }
+
+  reverse2() {
+    if (this.length === 0) return {};
+    if (this.length === 1) return this.head;
+
+    let current = this.head;
+    while(current.next) {
+        current.next = current
+        //once this.head becomes this.tail, pointer = null
+    }
+
+
+  }
 }
 
 
 
+let newLl = new LinkedList()
+newLl.addToTail(1)
+newLl.addToTail(2)
+newLl.addToTail(3)  
+newLl.addToTail(4)
+//console.log(newLl)
+console.log(newLl.head)
 //example here.
