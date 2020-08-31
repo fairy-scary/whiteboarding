@@ -169,18 +169,19 @@ class LinkedList {
   }
 
   reverse() {
-      let originalHead = this.head;
-      let originalTail = this.tail;
-      let node1;
-      let node2;
-      for (let i = 0; i < Math.ceil(this.length / 2); i++) {
-        node1 = this.get(i);
-        node2 = this.get((this.length - 1) - i);
-        node1.value = node2.value;
-      }
-      this.tail = originalHead;
-      this.head = originalTail;
-      return this;
+    if (this.length === 0) return null;
+    if (this.length === 1) return this;
+    let originalHead = this.head;
+    let originalTail = this.tail;
+    for (let i = (this.length - 1); i > 0; i--) {
+      this.get(i).next = this.get(i - 1);
+    }
+    originalHead.next = null;
+    this.head = originalTail;
+    this.tail = originalHead
+
+
+    return this
   }
 
   reverse2() {
@@ -188,9 +189,9 @@ class LinkedList {
     if (this.length === 1) return this.head;
 
     let current = this.head;
-    while(current.next) {
-        current.next = current
-        //once this.head becomes this.tail, pointer = null
+    while (current.next) {
+      current.next = current
+      //once this.head becomes this.tail, pointer = null
     }
 
 
@@ -202,8 +203,9 @@ class LinkedList {
 let newLl = new LinkedList()
 newLl.addToTail(1)
 newLl.addToTail(2)
-newLl.addToTail(3)  
-newLl.addToTail(4)
-//console.log(newLl)
-console.log(newLl.head)
+newLl.addToTail(3)
+// newLl.addToTail(4)
+newLl.reverse()
+console.log(newLl)
+// console.log(newLl.head)
 //example here.
