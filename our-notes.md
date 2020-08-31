@@ -20,7 +20,11 @@ constructor() {
 }
 
 reverse() {
-  // edge cases = 1. empty list(length), 2.time complexity is constant,
+  // edge cases = 1. empty list(length) or 2.list of one, return {},
+  //self for one
+  //3. list of two switch head w tail
+
+  //
 
 
   return this;
